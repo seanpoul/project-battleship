@@ -1,4 +1,4 @@
-const ship = require('../components/battleship');
+const ship = require('../components/ship');
 
 test('adds 1 + 2 to equal 3', () => {
     expect(sum(1, 2)).toBe(3);
