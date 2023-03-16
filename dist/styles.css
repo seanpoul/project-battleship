@@ -1,0 +1,12 @@
+#board {
+    display: flex;
+    height: 300px;
+    width: 300px;
+    background-color: lightgrey;
+}
+
+.row, .column {
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+}
