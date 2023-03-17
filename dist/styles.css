@@ -9,7 +9,7 @@
 }
 
 #playerBoard,
-#computerBoard {
+#enemyBoard {
     display: flex;
     height: 300px;
     width: 300px;
@@ -17,7 +17,7 @@
 }
 
 .playerBoard,
-.computerBoard {
+.enemyBoard {
     height: 30px;
     width: 30px;
     border: 1px black solid;

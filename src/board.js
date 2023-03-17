@@ -1,8 +1,8 @@
 let playerBoard = document.getElementById("playerBoard");
-let computerBoard = document.getElementById("computerBoard");
+let enemyBoard = document.getElementById("enemyBoard");
 
 playerBoard.className = "player";
-computerBoard.className = "computer";
+enemyBoard.className = "enemy";
 
 function gameBoard(board) {
     for (let i = 0; i < 10; i++) {
@@ -21,6 +21,6 @@ function gameBoard(board) {
 }
 
 gameBoard(playerBoard)
-gameBoard(computerBoard)
+gameBoard(enemyBoard)
 
 module.exports = gameBoard;

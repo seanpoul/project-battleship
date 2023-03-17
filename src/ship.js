@@ -1,4 +1,4 @@
-let clicked = document.getElementById("playerBoard");
+let clicked = document.getElementById("enemyBoard");
 
 clicked.addEventListener("click", function (event) {
     console.log(event.target.classList)
@@ -16,6 +16,8 @@ function ship(length) {
 
 function hit(event) {
     event.target.style.backgroundColor = "red";
+    // if boat and click are the same then its a hit
+    // else its a miss
 }
 
 function isSunk() {
