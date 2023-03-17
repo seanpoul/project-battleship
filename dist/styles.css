@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+#playArea {
+    display:flex;
+    justify-content: center;
+    gap: 20%;
+}
+
 #playerBoard,
 #computerBoard {
     display: flex;
@@ -10,7 +16,7 @@
     background-color: lightgrey;
 }
 
-.column {
+.playerBoard, .computerBoard {
     height: 30px;
     width: 30px;
     border: 1px black solid;
