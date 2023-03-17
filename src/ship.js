@@ -1,3 +1,10 @@
+let clicked = document.getElementById("playerBoard");
+
+clicked.addEventListener("click", function (event) {
+    console.log(event.target.classList)
+hit(event)
+})
+
 function ship(length) {
     let ship = {
         length: length,
@@ -7,8 +14,8 @@ function ship(length) {
     return ship
 }
 
-function hit() {
-
+function hit(event) {
+event.target.style.backgroundColor = "red";
 }
 
 function isSunk(){
