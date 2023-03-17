@@ -2,7 +2,7 @@ let clicked = document.getElementById("playerBoard");
 
 clicked.addEventListener("click", function (event) {
     console.log(event.target.classList)
-hit(event)
+    hit(event)
 })
 
 function ship(length) {
@@ -15,10 +15,10 @@ function ship(length) {
 }
 
 function hit(event) {
-event.target.style.backgroundColor = "red";
+    event.target.style.backgroundColor = "red";
 }
 
-function isSunk(){
+function isSunk() {
 
 }
 

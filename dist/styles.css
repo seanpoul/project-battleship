@@ -3,7 +3,7 @@
 }
 
 #playArea {
-    display:flex;
+    display: flex;
     justify-content: center;
     gap: 20%;
 }
@@ -16,7 +16,8 @@
     background-color: lightgrey;
 }
 
-.playerBoard, .computerBoard {
+.playerBoard,
+.computerBoard {
     height: 30px;
     width: 30px;
     border: 1px black solid;
