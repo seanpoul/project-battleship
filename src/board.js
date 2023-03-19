@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 let playerBoard = document.getElementById("playerBoard");
 let enemyBoard = document.getElementById("enemyBoard");
 
