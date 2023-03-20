@@ -48,7 +48,7 @@ function handleClick() {
 function makeFleet() {
     let fleet = [];
 
-    for (let a = 2; a < 7; a++) {
+    for (let a = 1; a < 6; a++) {
         let pos1 = Math.floor(Math.random() * 10);
         let pos2 = pos1;
         if (pos2 + a > 9) {
