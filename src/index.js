@@ -47,10 +47,15 @@ function handleClick() {
 
 function makeFleet() {
     let fleet = [];
-    
+
     for (let a = 2; a < 7; a++) {
         let pos1 = Math.floor(Math.random() * 10);
-        let pos2 = pos1 + a;
+        let pos2 = pos1;
+        if (pos2 + a > 9) {
+            pos2 = pos1 - a;
+        } else {
+            pos2 = pos1 + a - 1;
+        }
         fleet.push(new Ship(a, pos1, pos2));
     }
     console.log(fleet)
