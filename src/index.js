@@ -37,20 +37,22 @@ function handleClick() {
 
 
 class Ship {
-    constructor(lengths) {
+    constructor(lengths, pos1, pos2) {
         this.length = lengths;
+        this.pos1 = pos1;
+        this.pos2 = pos2;
         this.hits = [];
         this.isSunk = false;
     }
 }
 
-let i = 0;
-
-let shipOne = new Ship(1);
-let shipTwo = new Ship(2);
-let shipThree = new Ship(3);
-let shipFour = new Ship(4);
-let shipFive = new Ship(5);
+function makeFleet(){
+    let shipOne = new Ship(1);
+    let shipTwo = new Ship(2);
+    let shipThree = new Ship(3);
+    let shipFour = new Ship(4);
+    let shipFive = new Ship(5);
+}
 
 
 function hit(event) {
