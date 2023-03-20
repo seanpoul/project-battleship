@@ -4,6 +4,16 @@ let enemyBoard = document.getElementById("enemyBoard");
 playerBoard.className = "player";
 enemyBoard.className = "enemy";
 
+class Ship {
+    constructor(lengths, pos1, pos2) {
+        this.length = lengths;
+        this.pos1 = pos1;
+        this.pos2 = pos2;
+        this.hits = [];
+        this.isSunk = false;
+    }
+}
+
 function gameBoard(board) {
     for (let i = 0; i < 10; i++) {
         let column = document.createElement("div");
@@ -18,13 +28,13 @@ function gameBoard(board) {
         }
     }
     if (board == enemyBoard) {
-        handleClick()
+        handleClick();
+        makeFleet();
     }
 }
 
 gameBoard(playerBoard)
 gameBoard(enemyBoard)
-
 
 function handleClick() {
     let clicked = document.getElementById("enemyBoard");
@@ -35,25 +45,17 @@ function handleClick() {
     })
 }
 
-
-class Ship {
-    constructor(lengths, pos1, pos2) {
-        this.length = lengths;
-        this.pos1 = pos1;
-        this.pos2 = pos2;
-        this.hits = [];
-        this.isSunk = false;
+function makeFleet() {
+    let fleet = [];
+    
+    for (let a = 2; a < 7; a++) {
+        let pos1 = Math.floor(Math.random() * 10);
+        let pos2 = pos1 + a;
+        fleet.push(new Ship(a, pos1, pos2));
     }
+    console.log(fleet)
+    return fleet
 }
-
-function makeFleet(){
-    let shipOne = new Ship(1);
-    let shipTwo = new Ship(2);
-    let shipThree = new Ship(3);
-    let shipFour = new Ship(4);
-    let shipFive = new Ship(5);
-}
-
 
 function hit(event) {
     event.target.style.backgroundColor = "red";
@@ -65,18 +67,6 @@ function isSunk() {
 
 }
 
-
-
-let spawnShip = [];
-
-let pos1 = Math.floor(Math.random() * 10);
-// let po2 = pos1 + ship.length;
-// console.log(pos1);
-
-// console.log("yes")
-// console.log(ship.length)
-
 function place() {
-
 
 }
