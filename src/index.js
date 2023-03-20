@@ -50,16 +50,20 @@ function makeFleet() {
 
     for (let a = 1; a < 6; a++) {
         let pos1 = Math.floor(Math.random() * 10);
-        let pos2 = pos1;
-        if (pos2 + a > 9) {
-            pos2 = pos1 - a;
-        } else {
-            pos2 = pos1 + a - 1;
-        }
+        let pos2 = Math.floor(Math.random() * 10);
         fleet.push(new Ship(a, pos1, pos2));
+        if (fleet.length == 5) {
+            place(fleet)
+        }
     }
-    console.log(fleet)
     return fleet
+}
+
+function place(fleet) {
+    console.log(...fleet)
+    // pos1 is equal to column
+    // pos2 is equal to row
+    // add ship length to row axis
 }
 
 function hit(event) {
@@ -69,9 +73,6 @@ function hit(event) {
 }
 
 function isSunk() {
-
-}
-
-function place() {
-
+    // if fleet[#].length == hit.length
+    // then boat is sunk
 }
