@@ -16,8 +16,7 @@
     background-color: lightgrey;
 }
 
-.playerBoard,
-div[class*="row"] {
+.row {
     height: 30px;
     width: 30px;
     border: 1px black solid;

@@ -15,16 +15,17 @@ class Ship {
 }
 
 function gameBoard(board) {
+    let a = 0
     for (let i = 0; i < 10; i++) {
         let column = document.createElement("div");
         board.appendChild(column);
-        for (let j = 0; j < 10; j++) {
+        for (let j = 10; j > 0; j--) {
             let row = document.createElement("div");
-            // row.classList.add(board.id);
-            row.classList.add("column" + i);
-            row.classList.add("row" + j);
-            row.innerHTML = "X";
+            row.classList.add("row")
+            row.classList.add(a)
+            // row.innerHTML = "X";
             column.appendChild(row);
+            a++
         }
     }
     if (board == enemyBoard) {
@@ -47,20 +48,26 @@ function handleClick() {
 
 function makeFleet() {
     let fleet = [];
+    let count = 1
 
     for (let a = 1; a < 6; a++) {
-        let pos1 = Math.floor(Math.random() * 10);
-        let pos2 = Math.floor(Math.random() * 10);
+        let pos1 = Math.floor(Math.random() * 100);
+        let pos2 = pos1 + count;
         fleet.push(new Ship(a, pos1, pos2));
         if (fleet.length == 5) {
             place(fleet)
         }
+        count++
     }
-    return fleet
 }
 
 function place(fleet) {
     console.log(...fleet)
+    // console.log(enemyBoard.getElementsByClassName(fleet[0].pos1))
+    enemyBoard.getElementsByClassName(fleet[0].pos1)[0].style.backgroundColor = "blue"
+    enemyBoard.getElementsByClassName(fleet[0].pos1 + 10)[0].style.backgroundColor = "blue"
+
+
     // pos1 is equal to column
     // pos2 is equal to row
     // add ship length to row axis
