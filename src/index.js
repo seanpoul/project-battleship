@@ -62,12 +62,13 @@ function makeFleet() {
 }
 
 function place(fleet) {
-    console.log(...fleet)
+    // console.log(...fleet)
     // console.log(enemyBoard.getElementsByClassName(fleet[0].pos1))
-    enemyBoard.getElementsByClassName(fleet[0].pos1)[0].style.backgroundColor = "blue"
-    enemyBoard.getElementsByClassName(fleet[0].pos1 + 10)[0].style.backgroundColor = "blue"
+    enemyBoard.getElementsByClassName(fleet[0].pos1)[0].style.backgroundColor = "blue";
+    // enemyBoard.getElementsByClassName(fleet[0].pos1 + 10)[0].style.backgroundColor = "blue";
+    // enemyBoard.getElementsByClassName(fleet[0].pos1 + 20)[0].style.backgroundColor = "blue";
 
-
+    
     // pos1 is equal to column
     // pos2 is equal to row
     // add ship length to row axis
