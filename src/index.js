@@ -62,13 +62,22 @@ function makeFleet() {
 }
 
 function place(fleet) {
-    // console.log(...fleet)
-    // console.log(enemyBoard.getElementsByClassName(fleet[0].pos1))
-    enemyBoard.getElementsByClassName(fleet[0].pos1)[0].style.backgroundColor = "blue";
-    // enemyBoard.getElementsByClassName(fleet[0].pos1 + 10)[0].style.backgroundColor = "blue";
-    // enemyBoard.getElementsByClassName(fleet[0].pos1 + 20)[0].style.backgroundColor = "blue";
+    console.log(...fleet)
+    // console.log(enemyBoard.getElementsByClassName(fleet[0].pos1)[0])
+    // console.log(enemyBoard.getElementsByClassName(fleet[0].pos1 + 1)[0])
 
-    
+    let c = 0
+    for (let z = 0; z < 5; z++) {
+        for (let i = fleet[c].pos1; i < fleet[c].pos2; i++) {
+            enemyBoard.getElementsByClassName(fleet[c].pos1)[0].style.backgroundColor = "blue";
+            enemyBoard.getElementsByClassName(fleet[c].pos1 + z)[0].style.backgroundColor = "blue";
+            console.log(enemyBoard.getElementsByClassName(fleet[z].pos1)[0])
+            console.log(enemyBoard.getElementsByClassName(fleet[z].pos1 + c)[0])
+        }
+        c++
+    }
+
+
     // pos1 is equal to column
     // pos2 is equal to row
     // add ship length to row axis
