@@ -15,7 +15,7 @@ class Ship {
 }
 
 function gameBoard(board) {
-    let a = 0
+    let a = 0;
     for (let i = 0; i < 10; i++) {
         let column = document.createElement("div");
         board.appendChild(column);
@@ -66,16 +66,30 @@ function place(fleet) {
     // console.log(enemyBoard.getElementsByClassName(fleet[0].pos1)[0])
     // console.log(enemyBoard.getElementsByClassName(fleet[0].pos1 + 1)[0])
 
-    let c = 0
-    for (let i = fleet[c].pos1; i < fleet[c].pos2; i++) {
-        for (let z = 0; z < 5; z++) {
-            enemyBoard.getElementsByClassName(fleet[z].pos1)[0].style.backgroundColor = "blue";
-            enemyBoard.getElementsByClassName(fleet[z].pos1 + z)[0].style.backgroundColor = "blue";
-            console.log(enemyBoard.getElementsByClassName(fleet[z].pos1)[0])
-            console.log(enemyBoard.getElementsByClassName(fleet[z].pos1 + c)[0])
+    // let c = 0
+    // for (let i = fleet[c].pos1; i < fleet[c].pos2; i++) {
+    //     for (let z = 0; z < fleet[c].length; z++) {
+    //         enemyBoard.getElementsByClassName(fleet[c].pos1 + z)[0].style.backgroundColor = "blue";
+    //         console.log(enemyBoard.getElementsByClassName(fleet[c].pos1 + z)[0])
+    //         // console.log(enemyBoard.getElementsByClassName(fleet[z].pos1 + c)[0])
+    //     }
+    //     c++
+    // }
+
+    fleet.forEach(ship => {
+        for (let i = ship.pos1; i <= ship.pos2; i++)
+        {
+            let tempEnemyBoard = document.querySelector("#enemyBoard");
+            let tempTiles = tempEnemyBoard.querySelectorAll("div > div > div");
+            // loop through each tile
+            tempTiles.forEach(tile => {
+                if (tile.classList.contains(i)) {
+                    tile.style.backgroundColor = "blue";
+                }
+            })
+
         }
-        c++
-    }
+    });
 
 
     // pos1 is equal to column
